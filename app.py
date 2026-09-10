@@ -42,7 +42,7 @@ articles_per_feed = st.sidebar.slider("Articles per feed", 1, 10, 5)
 
 # Main UI
 st.title("🌐 Real-time Global News AI Analyst")
-st.caption("Automated Google News RSS ingestion & Gemini 2.5 Flash intelligence briefing in Korean.")
+st.caption("Automated Google News RSS ingestion & Gemini Intelligence briefing in Korean.")
 
 col1, col2 = st.columns([1, 2])
 
@@ -81,9 +81,9 @@ if fetch_button or 'news_data' in st.session_state:
             3. 매끄럽고 명확한 어조의 보고서 형식으로 작성해 주세요.
             """
             
-            with st.spinner("Gemini 2.5 Flash가 실시간 뉴스를 분석 중입니다..."):
+            with st.spinner("Gemini AI가 실시간 뉴스를 분석 중입니다..."):
                 response = client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-1.5-flash',
                     contents=prompt
                 )
                 
