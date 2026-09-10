@@ -83,7 +83,7 @@ if fetch_button or 'news_data' in st.session_state:
             
             with st.spinner("Gemini AI가 실시간 뉴스를 분석 중입니다..."):
                 response = client.models.generate_content(
-                    model='gemini-1.5-flash',
+                    model='gemini-2.5-flash',
                     contents=prompt
                 )
                 
