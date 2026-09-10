@@ -17,7 +17,14 @@ st.set_page_config(
 st.sidebar.title("🌐 News AI Config")
 st.sidebar.write("Configure RSS ingestion & Gemini AI parameters.")
 
-api_key_input = st.sidebar.text_input("Gemini API Key", type="password", help="Enter your Google Gemini API Key")
+# Streamlit Secrets에서 API Key 자동 로드 시도
+secrets_key = st.secrets.get("GEMINI_API_KEY", "")
+api_key_input = st.sidebar.text_input(
+    "Gemini API Key", 
+    value=secrets_key, 
+    type="password", 
+    help="Enter your Google Gemini API Key"
+)
 
 if api_key_input:
     st.sidebar.success("🔑 Gemini API Key configured")
